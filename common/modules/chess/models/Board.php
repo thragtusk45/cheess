@@ -34,5 +34,9 @@ class Board extends Model {
 
     }
 
+    public function move(Piece $piece, Tile $from,  Tile $to) {
+
+    }
+
 
 } 
