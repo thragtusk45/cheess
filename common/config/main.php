@@ -12,5 +12,8 @@ return [
             'showScriptName' => false,
             'suffix' => '/'
         ],
+        'game' => [
+            'class' => 'common\modules\chess\models\Game'
+        ]
     ],
 ];

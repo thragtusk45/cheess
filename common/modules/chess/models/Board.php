@@ -20,7 +20,8 @@ class Board extends Model {
      */
     private $tiles = [];
 
-    public function  __construct(BoardState $state = null) {
+    public function  __construct(BoardState $state = null)
+    {
         if($state) {
             $this->load($state->attributes);
         } else {
@@ -34,7 +35,8 @@ class Board extends Model {
 
     }
 
-    public function move(Piece $piece, Tile $from,  Tile $to) {
+    public function move(Piece $piece, Tile $from,  Tile $to)
+    {
 
     }
 

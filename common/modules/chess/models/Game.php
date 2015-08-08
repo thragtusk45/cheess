@@ -9,9 +9,10 @@
 namespace common\modules\chess\models;
 
 
+use yii\base\Component;
 use yii\base\Model;
-
-class Game extends Model {
+use Yii;
+class Game extends Component {
 
     /**
      * @var array[Rule]
@@ -26,6 +27,7 @@ class Game extends Model {
 
 
     public function __construct($rules, BoardState $state) {
+
         foreach($rules as $rule) {
             if($rule instanceof Rule) {
                 $this->rules[] = $rule;
