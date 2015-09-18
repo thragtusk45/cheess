@@ -26,7 +26,7 @@ class Game extends Component {
     protected $board;
 
 
-    public function __construct($rules, BoardState $state) {
+    public function __construct($rules = [], BoardState $state = null) {
 
         foreach($rules as $rule) {
             if($rule instanceof Rule) {

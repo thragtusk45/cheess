@@ -15,6 +15,9 @@ return [
         'chess' => [
             'class' => 'frontend\modules\chess\Chess',
         ],
+        'game' => [
+            'class' => 'frontend\modules\game\Game',
+        ],
     ] ,
     'components' => [
         'user' => [
@@ -37,6 +40,8 @@ return [
             'rules' => [
                 '' => 'site/index',
                 '<_m>/<_c>/<_a>' => '<_m>/<_c>/<_a>',
+                '<_m>/' => '<_m>/default/index',
+                '<_m>/<_c>/' => '<_m>/<_c>/index',
                 '<_c>/<_a>' => '<_c>/<_a>',
                 'chess/default/index' => 'chess/default/index',
             ]
