@@ -12,7 +12,7 @@ namespace common\modules\chess\models;
 use yii\base\Component;
 use yii\base\Model;
 use Yii;
-class Game extends Component {
+class Game extends Model {
 
     /**
      * @var array[Rule]
@@ -33,6 +33,7 @@ class Game extends Component {
                 $this->rules[] = $rule;
             }
         }
+        parent::__construct();
     }
 
     /**

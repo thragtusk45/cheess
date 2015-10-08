@@ -9,7 +9,12 @@
 namespace common\modules\chess\models;
 
 
-class Knight
+class Knight extends Piece
 {
+
+    public function getMoves()
+    {
+
+    }
 
 }
