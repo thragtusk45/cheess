@@ -9,13 +9,15 @@
 namespace common\modules\chess\models;
 
 
-use yii\base\Component;
+use common\models\User;
 use yii\base\Model;
 use Yii;
-class Game extends Model {
+
+class Game extends Model
+{
 
     /**
-     * @var array[Rule]
+     * @var Rule[]
      * additional rules
      */
     protected $rules = [];
@@ -25,11 +27,16 @@ class Game extends Model {
      */
     protected $board;
 
+    /**
+     * @var User[]
+     */
+    protected $players;
 
-    public function __construct($rules = [], BoardState $state = null) {
+    public function __construct($rules = [], BoardState $state = null)
+    {
 
-        foreach($rules as $rule) {
-            if($rule instanceof Rule) {
+        foreach ($rules as $rule) {
+            if ($rule instanceof Rule) {
                 $this->rules[] = $rule;
             }
         }
@@ -40,7 +47,8 @@ class Game extends Model {
      * @param BoardState $state
      * Init new board or load an existing board state
      */
-    public function initBoard(BoardState $state = null) {
+    public function initBoard(BoardState $state = null)
+    {
         $this->board = !empty($state) ? new Board($state) : new Board();
     }
 } 
