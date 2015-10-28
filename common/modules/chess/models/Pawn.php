@@ -19,12 +19,14 @@ class Pawn extends Piece {
 
     protected $enPassant = false;
 
-    public function getMoves() {
+    public function getMoves(Board $board) {
         $availableMoves = [];
-        $availableMoves[] = [
-            'col' => $this->col,
-            'row' => ($this->color == self::COLOR_WHITE) ? $this->row+1 : $this->row-1
-        ];
+        if (Board::cellExists($this->col,$this->row+1)) {
+            $availableMoves[] = [
+                'col' => $this->col,
+                'row' => ($this->color == self::COLOR_WHITE) ? $this->row+1 : $this->row-1
+            ];
+        }
         if(!$this->moved) {
             $availableMoves[] = [
                 'col' => $this->col,

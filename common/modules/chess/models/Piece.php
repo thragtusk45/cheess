@@ -30,7 +30,7 @@ abstract class Piece extends Model {
      */
     protected $col;
 
-    abstract function getMoves();
+    abstract function getMoves(Board $board);
 
 
 } 

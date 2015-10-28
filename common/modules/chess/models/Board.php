@@ -46,17 +46,17 @@ class Board extends Model
     private function placePieces()
     {
         for ($col = 1; $col <= 8; $col++) {
-            $this->tiles[2][$col] = new Pawn();//white
-            $this->tiles[7][$col] = new Pawn();//black
+            $this->tiles[2][$col]->setPiece(new Pawn());//white
+            $this->tiles[7][$col]->setPiece(new Pawn());//black
         }
-        $this->tiles[1][1] = new Rook();
-        $this->tiles[1][8] = new Rook();
+        $this->tiles[1][1]->setPiece(new Rook());
+        $this->tiles[1][8]->setPiece(new Rook());
 
-        $this->tiles[8][1] = new Rook();
-        $this->tiles[8][8] = new Rook();
+        $this->tiles[8][1]->setPiece(new Rook());
+        $this->tiles[8][8]->setPiece(new Rook());
 
-        $this->tiles[1][2] = new Knight();
-        $this->tiles[1][7] = new Knight();
+        $this->tiles[1][2]->setPiece(new Knight());
+        $this->tiles[1][7]->setPiece(new Knight());
 
         $this->tiles[8][2] = new Knight();
         $this->tiles[8][7] = new Knight();
@@ -75,4 +75,22 @@ class Board extends Model
     }
 
 
+    public function getPieceMoves(Piece $piece)
+    {
+        return $piece->getMoves($this);
+    }
+
+    public static function cellExists($col, $row)
+    {
+        if ($col > 8 || $row > 8) {
+            return false;
+        }
+
+        return true;
+    }
+
+    public function getCellContents($col, $row)
+    {
+
+    }
 } 
